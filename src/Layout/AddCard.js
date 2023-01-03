@@ -7,7 +7,7 @@ import CardForm from "./CardForm";
 
 
 function AddCard(){
-const [deck, setDeck] = useState({})
+const [deck, setDeck] = useState({});
 const [card, setCard] = useState({ 
     front: "Front side of card", 
     back: "Back side of card" });
@@ -22,49 +22,50 @@ const {deckId} = useParams();
     }
 
     const handleBackChange = (event) => {
-        setBack(event.target.value)
+        setBack(event.target.value);
     }
 
     useEffect(() => {
         async function loadDeck(){
-            const response = await readDeck(deckId)
-             setDeck(response)
-             console.log(response)
+            const response = await readDeck(deckId);
+             setDeck(response);
+             console.log(response);
         }
-        loadDeck()
-    }, [deckId])
+        loadDeck();
+    }, [deckId]);
 
-    const submitHandler = async (event) =>{
-        event.preventDefault()
+    const submitHandler = async (event) => {
+        event.preventDefault();
         const response = await createCard(deckId, {front, back});
-        console.log(response)
-        await readDeck(response.deckId)
-        history.go(0)
+        console.log(response);
+        await readDeck(response.deckId);
+        history.go(0);
     }
 
 
 
     function buttonHandler(event) {
         event.preventDefault();
-        history.push(`/decks/${deck.id}`)
+        history.push(`/decks/${deck.id}`);
     }
 
 
 return (
     <div>
         <nav aria-label="breadcrumb">
-             <ol className="breadcrumb">
+            <ol className="breadcrumb">
                  <li className="breadcrumb-item">
                      <Link to="/">
-                    Home</Link>
+                    Home
+                    </Link>
                 </li>
                 <li className="breadcrumb-item">
                     <Link to={`/decks/${deck.id}`}>{deck.name}</Link>
                 </li>
-                 <li className="breadcrumb-item active" aria-current="page">Add Card</li>
+                <li className="breadcrumb-item active" aria-current="page">Add Card</li>
             </ol>
-         </nav>
-         <h2>{deck.name}: Add Card</h2>
+        </nav>
+        <h2>{deck.name}: Add Card</h2>
         <CardForm 
         submitButtonHandler={submitHandler}
         cancelButtonHandler={buttonHandler}
@@ -74,8 +75,7 @@ return (
         deckId={deckId}
         />
     </div>
-)
+    )
 }
-
 
 export default AddCard;
