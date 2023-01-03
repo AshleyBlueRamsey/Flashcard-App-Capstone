@@ -16,7 +16,7 @@ function Layout() {
     <div className="Layout">
       <Header />
       <div className="container">
-      <Switch>
+        <Switch>
           <Route exact path="/">
             <Homepage />
           </Route>
@@ -41,7 +41,7 @@ function Layout() {
           <Route>
             <NotFound />
           </Route>
-      </Switch>
+        </Switch>
       </div>
     </div>
   );
