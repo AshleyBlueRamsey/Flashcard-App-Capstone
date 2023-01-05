@@ -7,19 +7,19 @@ import CardForm from "./CardForm";
 
 
 function AddCard() {
+const [cardFront, setCardFront] = useState("Front side of card");
+const [cardBack, setCardBack] = useState("Back side of card");
 const [deck, setDeck] = useState({});
-const [front, setFront] = useState("Front side of card");
-const [back, setBack] = useState("Back side of card");
 const history = useHistory();
 const {deckId} = useParams();
 
 
-    const handleFrontChange = (event) => {
-        setFront(event.target.value)
+    const handleCardFrontChange = (event) => {
+        setCardFront(event.target.value)
     }
 
-    const handleBackChange = (event) => {
-        setBack(event.target.value);
+    const handleCardBackChange = (event) => {
+        setCardBack(event.target.value);
     }
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const {deckId} = useParams();
 
     const submitHandler = async (event) => {
         event.preventDefault();
-        const response = await createCard(deckId, {front, back});
+        const response = await createCard(deckId, {cardFront, cardBack});
         console.log(response);
         await readDeck(response.deckId);
         history.go(0);
@@ -66,8 +66,8 @@ return (
         <CardForm 
         submitButtonHandler={submitHandler}
         cancelButtonHandler={buttonHandler}
-        handleFrontChange={handleFrontChange}
-        handleBackChange={handleBackChange}
+        handleCardFrontChange={handleCardFrontChange}
+        handleCardBackChange={handleCardBackChange}
         deckId={deckId}
         />
     </div>
