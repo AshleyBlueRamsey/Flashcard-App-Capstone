@@ -6,20 +6,23 @@ import CardForm from "./CardForm";
 
 
 
-function AddCard() {
-const [cardFront, setCardFront] = useState("Front side of card");
-const [cardBack, setCardBack] = useState("Back side of card");
+function AddCard(){
 const [deck, setDeck] = useState({});
-const history = useHistory();
+const [card, setCard] = useState({ 
+    front: "Front side of card", 
+    back: "Back side of card" });
+const [front, setFront] = useState("");
+const [back, setBack] = useState("");
+const history=useHistory();
 const {deckId} = useParams();
 
 
-    const handleCardFrontChange = (event) => {
-        setCardFront(event.target.value)
+    const handleFrontChange = (event) => {
+        setFront(event.target.value)
     }
 
-    const handleCardBackChange = (event) => {
-        setCardBack(event.target.value);
+    const handleBackChange = (event) => {
+        setBack(event.target.value);
     }
 
     useEffect(() => {
@@ -33,7 +36,7 @@ const {deckId} = useParams();
 
     const submitHandler = async (event) => {
         event.preventDefault();
-        const response = await createCard(deckId, {cardFront, cardBack});
+        const response = await createCard(deckId, {front, back});
         console.log(response);
         await readDeck(response.deckId);
         history.go(0);
@@ -66,8 +69,9 @@ return (
         <CardForm 
         submitButtonHandler={submitHandler}
         cancelButtonHandler={buttonHandler}
-        handleCardFrontChange={handleCardFrontChange}
-        handleCardBackChange={handleCardBackChange}
+        handleFrontChange={handleFrontChange}
+        handleBackChange={handleBackChange}
+        card={card}
         deckId={deckId}
         />
     </div>
