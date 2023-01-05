@@ -6,14 +6,11 @@ import CardForm from "./CardForm";
 
 
 
-function AddCard(){
+function AddCard() {
 const [deck, setDeck] = useState({});
-const [card, setCard] = useState({ 
-    front: "Front side of card", 
-    back: "Back side of card" });
-const [front, setFront] = useState("");
-const [back, setBack] = useState("");
-const history=useHistory();
+const [front, setFront] = useState("Front side of card");
+const [back, setBack] = useState("Back side of card");
+const history = useHistory();
 const {deckId} = useParams();
 
 
@@ -71,7 +68,6 @@ return (
         cancelButtonHandler={buttonHandler}
         handleFrontChange={handleFrontChange}
         handleBackChange={handleBackChange}
-        card={card}
         deckId={deckId}
         />
     </div>
