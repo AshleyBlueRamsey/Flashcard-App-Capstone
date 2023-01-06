@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function CardForm({ handleBackChange, handleFrontChange, submitButtonHandler, cancelButtonHandler, card }){
+function CardForm({ handleBackChange, handleFrontChange, submitButtonHandler, cancelButtonHandler, front, back }){
 
     return (
         <form onSubmit={submitButtonHandler}>
@@ -13,7 +13,7 @@ function CardForm({ handleBackChange, handleFrontChange, submitButtonHandler, ca
                         id="front"
                         type="text"
                         name="front"
-                        value={card.front}
+                        value={front}
                         onChange={handleFrontChange}
                     />
                 </div>
@@ -24,7 +24,7 @@ function CardForm({ handleBackChange, handleFrontChange, submitButtonHandler, ca
                         id="back"
                         type="text"
                         name="back"
-                        value={card.back}
+                        value={back}
                         onChange={handleBackChange}
                     />
                 </div>
