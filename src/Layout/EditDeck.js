@@ -7,7 +7,7 @@ import { updateDeck, readDeck } from "../utils/api/index";
 
 function EditDeck() {
     const history = useHistory();
-    const [deck, setDeck] = useState({name: "", description: "" });
+    const [deck, setDeck] = useState({id:"", name:"", description:"", cards:""});
     const {deckId} = useParams();
 
 
