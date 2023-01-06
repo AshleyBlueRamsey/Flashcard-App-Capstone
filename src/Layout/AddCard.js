@@ -9,8 +9,8 @@ import CardForm from "./CardForm";
 function AddCard(){
 const [deck, setDeck] = useState({});
 const [card, setCard] = useState({ 
-    front: "Front side of card", 
-    back: "Back side of card" });
+    front: "", 
+    back: "" });
 const [front, setFront] = useState("");
 const [back, setBack] = useState("");
 const history=useHistory();
