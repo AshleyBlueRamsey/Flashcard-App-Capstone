@@ -34,7 +34,7 @@ useEffect(() => {
   //react key warning
 
   return (
-  <div>
+  <div >
     <div>           
       <Link to="/decks/new" className="btn btn-secondary text-white"> 
         {" "}Create Deck
@@ -42,7 +42,7 @@ useEffect(() => {
     </div>
     <div>
       {decks?.map((deck)=>
-        <div className="d-grid gap-2 d-md-block mt-2 mb-4" key={deck}> 
+        <div className="d-grid gap-2 d-md-block mt-2 mb-4" key={deck.id}> 
           <div className="card w-75">
             <div className="card-header bg-light">
               <h5 className="float-left">{deck.name}</h5>
