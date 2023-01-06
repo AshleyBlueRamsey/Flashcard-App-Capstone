@@ -46,7 +46,7 @@ function Study() {
                 setCardIndexNumber(0);
                 setCardFrontSide(true)
             } else {
-                history.push("/");
+                history.go("/");
             }
         } 
         else {

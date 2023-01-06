@@ -43,17 +43,16 @@
       "id": 5
     },
     {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
-    },
-    {
       "front": "React elements are immutable.",
       "back": "Once you create an element, you can't change it's children or attributes.",
       "deckId": 1,
       "id": 8
+    },
+    {
+      "front": "Testing",
+      "back": "Testing",
+      "deckId": 1,
+      "id": 9
     }
   ]
 }

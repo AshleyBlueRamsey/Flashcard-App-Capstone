@@ -37,13 +37,13 @@ function EditCard() {
     
     function cancelButtonHandler(event) {
         event.preventDefault();
-        history.push(`/decks/${deck.id}`);
+        history.go(`/decks/${deck.id}`);
     }
     
     const submitButtonHandler = async (event) => {
         event.preventDefault();
         await updateCard(card);
-        history.push(`/decks/${deck.id}`);
+        history.go(`/decks/${deck.id}`);
     };
     
     console.log(card.front)

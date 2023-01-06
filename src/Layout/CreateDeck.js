@@ -20,8 +20,8 @@ const handleDescriptionChange = (event) => {
 const submitHandler= async (event) =>{
     event.preventDefault()
     const response = await createDeck({name, description});
-    await readDeck(response.deckId)
-    history.push(`/decks/${response.id}`)
+    await readDeck(response.id)
+    history.go(`/decks/${response.id}`)
 }
 
 

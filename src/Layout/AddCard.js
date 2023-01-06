@@ -38,14 +38,14 @@ const {deckId} = useParams();
         const response = await createCard(deckId, {front, back});
         console.log(response);
         await readDeck(response.deckId);
-        history.push(0);
+        history.go(0);
     }
 
 
 
     function buttonHandler(event) {
         event.preventDefault();
-        history.push(`/decks/${deck.id}`);
+        history.go(`/decks/${deck.id}`);
     }
 
 

@@ -25,14 +25,14 @@ function EditDeck() {
     const submitHandler= async (event) =>{ 
         event.preventDefault();
         await updateDeck(deck);
-        history.push(`/decks/${deck.id}`);
+        history.go(`/decks/${deck.id}`);
     };
 
 
 
     const cancelButtonHandler = (event) => {
         event.preventDefault();
-        history.push(`/decks/${deck.id}`)
+        history.go(`/decks/${deck.id}`)
     }
 
     const handleNameChange = (event) => {
