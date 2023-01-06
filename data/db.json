@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Rendering in React",
-      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. React DOM takes care of updating the DOM to match React elements."
     },
     {
       "name": "React Router",
@@ -48,6 +48,12 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "React elements are immutable.",
+      "back": "Once you create an element, you can't change it's children or attributes.",
+      "deckId": 1,
+      "id": 8
     }
   ]
 }

@@ -27,7 +27,7 @@ useEffect(() => {
       )
     ) {
       deleteDeck(deckId)
-      .then(history.go(0));
+      .then(history.push(0));
     }
   }
 

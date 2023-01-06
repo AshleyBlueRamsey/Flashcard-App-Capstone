@@ -38,7 +38,7 @@ const {deckId} = useParams();
         const response = await createCard(deckId, {front, back});
         console.log(response);
         await readDeck(response.deckId);
-        history.go(0);
+        history.push(0);
     }
 
 

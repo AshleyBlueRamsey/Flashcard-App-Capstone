@@ -26,7 +26,7 @@ function Deck() {
       )
     ) {
       deleteDeck(deckId)
-      .then(history.go(0));
+      .then(history.push(0));
     }
   }
 
@@ -37,7 +37,7 @@ function Deck() {
           )
       ) {
           deleteCard(cardId)
-          .then(history.go(0))
+          .then(history.push(0))
       }
   }
 
