@@ -8,9 +8,6 @@ import CardForm from "./CardForm";
 
 function AddCard(){
 const [deck, setDeck] = useState({});
-const [card, setCard] = useState({ 
-    front: "", 
-    back: "" });
 const [front, setFront] = useState("");
 const [back, setBack] = useState("");
 const history=useHistory();
@@ -18,10 +15,12 @@ const {deckId} = useParams();
 
 
     const handleFrontChange = (event) => {
+        event.preventDefault();
         setFront(event.target.value)
     }
 
     const handleBackChange = (event) => {
+        event.preventDefault();
         setBack(event.target.value);
     }
 
@@ -71,7 +70,6 @@ return (
         cancelButtonHandler={buttonHandler}
         handleFrontChange={handleFrontChange}
         handleBackChange={handleBackChange}
-        card={card}
         deckId={deckId}
         />
     </div>
