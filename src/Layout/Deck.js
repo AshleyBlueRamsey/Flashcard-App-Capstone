@@ -72,7 +72,7 @@ return (
                 <Link to={`/decks/${deck.id}/cards/new`} className="btn btn-primary ml-2 float-left">
                     {" "}Add Cards
                 </Link>
-                <button className="btn btn-danger ml-2 float-right" onClick={() => deleteDeckHandler(deck.id)}>
+                <button className="btn btn-danger ml-2 float-right" type="button" onClick={() => deleteDeckHandler(deck.id)}>
                 </button> 
             </div>
         </div>
@@ -90,7 +90,7 @@ return (
                                 <Link to={`/decks/${deck.id}/cards/${card.id}/edit`} className="btn btn-secondary text-white">
                                     {" "}Edit
                                 </Link>
-                                <button className="btn btn-danger ml-2" onClick={() => deleteCardHandler(card.id)}>
+                                <button className="btn btn-danger ml-2" type="button" onClick={() => deleteCardHandler(card.id)}>
                                 </button> 
                             </div>  
                         </div>

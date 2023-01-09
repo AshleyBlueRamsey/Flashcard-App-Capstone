@@ -32,7 +32,7 @@ function EditDeck() {
 
     const cancelButtonHandler = (event) => {
         event.preventDefault();
-        history.go(`/decks/${deck.id}`)
+        history.push(`/decks/${deck.id}`);
     }
 
     const handleNameChange = (event) => {
@@ -85,7 +85,7 @@ function EditDeck() {
                 </div>
             </div>
             <div className="mt-2">
-                <button className="btn btn-secondary text-white" onClick={cancelButtonHandler}>Cancel</button>
+                <button className="btn btn-secondary text-white" type="button" onClick={cancelButtonHandler}>Cancel</button>
                 <button type="submit" className="btn btn-primary ml-2">Submit</button>
             </div>
         </form>

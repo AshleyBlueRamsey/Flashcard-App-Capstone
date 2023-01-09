@@ -17,6 +17,10 @@ const {deckId} = useParams();
     const handleFrontChange = (event) => {
         event.preventDefault();
         setFront(event.target.value)
+    };
+
+    const cancelButtonHandler = (event) => {
+        history.push(`/decks/${deck.id}`);
     }
 
     const handleBackChange = (event) => {
@@ -42,13 +46,6 @@ const {deckId} = useParams();
     }
 
 
-
-    function buttonHandler(event) {
-        event.preventDefault();
-        history.go(`/decks/${deck.id}`);
-    }
-
-
 return (
     <div>
         <nav aria-label="breadcrumb">
@@ -66,8 +63,9 @@ return (
         </nav>
         <h2>{deck.name}: Add Card</h2>
         <CardForm 
-        submitButtonHandler={submitHandler}
-        cancelButtonHandler={buttonHandler}
+        type="submit"
+        submitHandler={submitHandler}
+        cancelButtonHandler={cancelButtonHandler}
         handleFrontChange={handleFrontChange}
         handleBackChange={handleBackChange}
         deckId={deckId}

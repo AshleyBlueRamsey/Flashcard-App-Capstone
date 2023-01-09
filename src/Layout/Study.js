@@ -116,8 +116,8 @@ function Study() {
                 <div>
                     {cardFrontSide ? <p>{cards[cardIndexNumber]?.front}</p> : <p>{cards[cardIndexNumber]?.back}</p>}
                 </div>
-                <button className="btn btn-secondary" onClick={flipButtonHandler}>Flip</button>
-                {cardFrontSide ? <p></p> : <button className="btn btn-primary" onClick={nextButtonHandler}>Next</button>}
+                <button className="btn btn-secondary" type="button" onClick={flipButtonHandler}>Flip</button>
+                {cardFrontSide ? <p></p> : <button className="btn btn-primary" type="button" onClick={nextButtonHandler}>Next</button>}
             </div>
         </div>
     </div>

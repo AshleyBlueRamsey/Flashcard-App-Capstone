@@ -58,7 +58,7 @@ useEffect(() => {
                 <Link to={`/decks/${deck.id}/study`} className="btn btn-primary float-left">
                   {" "}Study
                 </Link>
-                <button className="btn btn-danger float-right" onClick={() => deleteButtonHandler(deck.id)}>
+                <button className="btn btn-danger float-right" type="button" onClick={() => deleteButtonHandler(deck.id)}>
                 </button>
             </div>
           </div>  
